@@ -10,8 +10,6 @@ import('./async.js').then(mod => {
 
 const pinia = createPinia()
 
-console.log("WHERE IS FUCKING PINIA: ", pinia)
-
 const app = createApp({
   pinia,
   render: () => h(App)
