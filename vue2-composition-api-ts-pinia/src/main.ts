@@ -3,8 +3,6 @@ import { createPinia } from 'pinia'
 
 import App from './App.vue'
 
-
-
 //code splitting | lazily loaded file \\
 import('./async.js').then(mod => {
   console.log("MOD ", mod)

@@ -1,8 +1,8 @@
 <template>
   <div>
-    <img alt="Vue logo" src="./assets/logo.png" /><HelloWorld
+    <img alt="Vue logo" src="./assets/logo.png" /><Info
       msg="Hello Vue 3 + Vite"
-    ></HelloWorld>
+    ></Info>
     <div>{{getName}}</div>
     <div class="stuff">some class test</div>
   </div>
@@ -10,16 +10,16 @@
 
 <script lang='ts'>
 import { defineComponent, computed } from "vue-demi";
-import HelloWorld from '@/components/HelloWorld.vue'
+import Info from '@/components/Info.vue'
 import { useMainStore } from "@/store/index";
 
 export default defineComponent({
-  components: { HelloWorld },
+  components: { Info },
   setup() {
     const store = useMainStore()
     return {
       getName: computed(() => store.getName),
-      HelloWorld,
+      Info,
     };
   },
 });

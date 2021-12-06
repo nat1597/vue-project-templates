@@ -1,20 +1,3 @@
-<script>
-import { ref, defineComponent } from "vue-demi";
-
-export default defineComponent({
-  props: {
-    msg: String
-  },
-  setup() {
-    const count = ref(0)
-    return {
-      ref,
-      count,
-    };
-  },
-});
-</script>
-
 <template>
   <div>
     <h1>{{ msg }}</h1>
@@ -41,6 +24,23 @@ export default defineComponent({
     </p>
   </div>
 </template>
+<script lang='ts'>
+import { ref, defineComponent } from "vue-demi";
+import { useMainStore } from "@/store/index";
+export default defineComponent({
+  props: {
+    msg: String
+  },
+  setup() {
+    const store = useMainStore()
+    const count = ref(store.getCount)
+    console.log("COUNT IS: ", store)
+    return {
+      count,
+    };
+  },
+});
+</script>
 
 <style scoped>
 a {
